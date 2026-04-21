@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+/* App font stacks (IBM Plex Mono + DM Sans per DESIGN.md) — exposed as `font-sans` / `font-mono` utilities */
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.canvas-dot-grid {
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(
+    circle,
+    rgba(120, 120, 120, 0.35) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+@layer components {
+  .pipe-critical-glow {
+    filter: drop-shadow(0 0 6px var(--status-critical-glow));
+  }
+
+  /**
+   * Thin, dark scrollbars aligned with SCADA tokens (Firefox + WebKit).
+   * Use on panel bodies that scroll so the native light grey bar does not clash.
+   */
+  .scrollbar-themed {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-default) var(--bg-elevated);
+  }
+
+  .scrollbar-themed::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-themed::-webkit-scrollbar-track {
+    margin: var(--space-1);
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+  }
+
+  .scrollbar-themed::-webkit-scrollbar-thumb {
+    background: var(--border-default);
+    border-radius: var(--radius-sm);
+  }
+
+  .scrollbar-themed::-webkit-scrollbar-thumb:hover {
+    background: var(--border-strong);
+  }
+
+  .scrollbar-themed::-webkit-scrollbar-thumb:active {
+    background: var(--text-muted);
+  }
+
+  /** Fixed viewport for Active Alerts list — matches `--alerts-panel-body-height` in tokens.css */
+  .alerts-panel-scroll {
+    height: var(--alerts-panel-body-height);
+    min-height: var(--alerts-panel-body-height);
+  }
+
+  /**
+   * Secondary pages (Maintenance, History, Settings): soft accent glow + depth without inline styles.
+   */
+  .page-ambient {
+    background: radial-gradient(
+        ellipse 100% 70% at 50% -25%,
+        var(--accent-muted),
+        transparent 50%
+      ),
+      var(--bg-base);
+  }
+
+  .surface-elevated {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    background: var(--bg-surface);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .header-kpi-pill {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-default);
+    background: var(--bg-elevated);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /** Pipeline + flow chart stack: pipeline row grows and stays visually large */
+  .dashboard-pipeline-stack {
+    grid-template-rows: minmax(var(--dashboard-pipeline-min-row), 1fr) auto;
+  }
+}
+
+@layer base {
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+    max-height: 100dvh;
+    overflow: hidden;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    height: 100%;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+}

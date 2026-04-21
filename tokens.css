@@ -1,0 +1,86 @@
+:root {
+  /* Backgrounds — industrial control reference palette */
+  --bg-base: #2c2c2c; /* Page background */
+  --bg-surface: #3a3a3a; /* Cards, panels */
+  --bg-elevated: #454545; /* Modals, dropdowns */
+  --bg-hover: #4d4d4d; /* Hover state on interactive elements */
+
+  /* Borders */
+  --border-subtle: #4a4a4a; /* Between sections */
+  --border-default: #5a5a5a; /* Card borders, inputs */
+  --border-strong: #6b6b6b; /* Focused elements */
+
+  /* Text */
+  --text-primary: #f5f5f5; /* Main content */
+  --text-secondary: #c4c4c4; /* Labels, metadata */
+  --text-muted: #9e9e9e; /* Placeholders, disabled */
+  --text-inverse: #2c2c2c; /* Text on colored backgrounds */
+
+  /* Status — Pipeline */
+  --status-normal: #4caf50; /* Green — flow OK */
+  --status-normal-bg: #1b3d1f; /* Green tinted bg */
+  --status-normal-glow: rgba(76, 175, 80, 0.35);
+
+  --status-warning: #ff9800; /* Orange — low flow */
+  --status-warning-bg: #3d2800;
+  --status-warning-glow: rgba(255, 152, 0, 0.3);
+
+  --status-critical: #f44336; /* Red — leak/blockage */
+  --status-critical-bg: #3d1815;
+  --status-critical-glow: rgba(244, 67, 54, 0.45);
+
+  --status-unknown: #757575; /* Grey — no data */
+  --status-unknown-bg: #3a3a3a;
+
+  /* Pipeline Canvas */
+  --pipe-width: 12px; /* Stroke width for pipe lines */
+  --pipe-bg: #454545; /* Inactive pipe background */
+  --pipe-border: #5a5a5a; /* Pipe outline */
+
+  --valve-open: #4a90e2; /* Open valve — primary blue */
+  --valve-closed: #c62828; /* Closed valve */
+  --valve-ring: #e8e8e8; /* Valve circle outline */
+
+  --sensor-fill: #e8e8e8; /* Diamond fill (IoT) */
+  --sensor-stroke: #9e9e9e; /* Diamond outline default */
+  --sensor-legend-fill: #e8e8e8; /* Legend diamond */
+  --sensor-text: #f5f5f5; /* Value label */
+
+  --reservoir-fill: rgba(74, 144, 226, 0.22); /* Light blue tank */
+  --reservoir-stroke: #4a90e2; /* Reservoir border */
+  --reservoir-text: #f5f5f5; /* Reservoir label */
+
+  /* Brand accent */
+  --accent: #4a90e2; /* Blue — interactive elements, selection */
+  --accent-hover: #3b7dd1;
+  --accent-muted: rgba(74, 144, 226, 0.2);
+
+  /* Left nav — rounded sidebar card */
+  --nav-sidebar-bg: #3b3b3b;
+  --nav-item-active-bg: #3e5c6b;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Dashboard right rail — Active Alerts scroll viewport (stable layout vs System Health / Leak simulator) */
+  --alerts-panel-body-height: 280px;
+
+  /* Dashboard main column: pipeline row minimum height (see `.dashboard-pipeline-stack` in index.css) */
+  --dashboard-pipeline-min-row: 380px;
+}
